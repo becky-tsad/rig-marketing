@@ -374,8 +374,8 @@ export default function FastTrackPage() {
                 <p className="text-sm text-gray-600">CEO, TechStart Solutions</p>
 
                 <div className="mt-8">
-                  <Button href="/portfolio/techstart-launch" variant="secondary">
-                    Read the Full Case Study
+                  <Button href="/contact" variant="secondary">
+                    Book a Free Strategy Call
                   </Button>
                 </div>
               </div>

@@ -44,8 +44,8 @@ export default function FastTrackTeaser() {
                   <Button href="/fast-track">
                     Learn About the Fast Track
                   </Button>
-                  <Button href="/portfolio/techstart-launch" variant="outline">
-                    See a Success Story
+                  <Button href="/contact" variant="outline">
+                    Get Started
                   </Button>
                 </div>
               </div>

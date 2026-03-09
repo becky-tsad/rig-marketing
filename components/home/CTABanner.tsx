@@ -28,8 +28,8 @@ export default function CTABanner() {
               <Button href="/contact" size="lg">
                 Book Your Free Strategy Call
               </Button>
-              <Button href="/portfolio" variant="outline" size="lg">
-                See Client Results
+              <Button href="/services" variant="outline" size="lg">
+                Explore Our Services
               </Button>
             </div>
           </div>
