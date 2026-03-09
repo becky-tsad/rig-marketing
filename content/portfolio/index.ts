@@ -9,11 +9,6 @@ export interface CaseStudy {
   approach: string;
   results: string;
   metrics: { label: string; value: string }[];
-  testimonial?: {
-    quote: string;
-    author: string;
-    role: string;
-  };
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -35,11 +30,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Online Sales", value: "+65%" },
       { label: "Social Engagement", value: "+150%" },
     ],
-    testimonial: {
-      quote: "RIG didn't just give us a new logo — they gave us a brand identity that truly represents who we are. The results speak for themselves.",
-      author: "Sarah Chen",
-      role: "Founder, Bloom Botanicals",
-    },
   },
   {
     slug: "techstart-launch",
@@ -59,11 +49,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Paying Customers", value: "50" },
       { label: "Social Followers", value: "2,000+" },
     ],
-    testimonial: {
-      quote: "The 90-Day Fast Track was a game-changer for us. RIG took us from an idea to a real business with real customers in record time.",
-      author: "Marcus Johnson",
-      role: "CEO, TechStart Solutions",
-    },
   },
   {
     slug: "urban-eats-social",
@@ -83,11 +68,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Weekly Bookings", value: "+80%" },
       { label: "Ad ROAS", value: "5x" },
     ],
-    testimonial: {
-      quote: "Our tables are full and our phone doesn't stop ringing. RIG's social media magic turned our restaurant into the talk of the town.",
-      author: "Chef Maria Santos",
-      role: "Owner, Urban Eats Bistro",
-    },
   },
   {
     slug: "greenfield-seo",
@@ -107,10 +87,5 @@ export const caseStudies: CaseStudy[] = [
       { label: "Organic Traffic", value: "+300%" },
       { label: "Consultation Bookings", value: "+120%" },
     ],
-    testimonial: {
-      quote: "We went from being invisible online to showing up at the top of Google. The quality of leads from organic search has been outstanding.",
-      author: "David Park",
-      role: "Managing Partner, Greenfield Financial",
-    },
   },
 ];

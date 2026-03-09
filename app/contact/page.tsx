@@ -10,20 +10,6 @@ export const metadata: Metadata = {
     "Book a free strategy call with Becky at RIG Marketing. Let's discuss how we can help your business grow.",
 };
 
-const testimonialSnippets = [
-  {
-    quote: "RIG completely transformed our brand. Our leads tripled in 3 months.",
-    author: "Sarah Chen",
-    role: "Founder, Bloom Botanicals",
-    image: "/images/testimonials/sarah-chen.svg",
-  },
-  {
-    quote: "The 90-Day Fast Track took us from zero to 50 paying customers.",
-    author: "Marcus Johnson",
-    role: "CEO, TechStart Solutions",
-    image: "/images/testimonials/marcus-johnson.svg",
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -172,31 +158,8 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Social Proof */}
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="font-semibold text-navy-900 text-sm mb-4">
-                  What Clients Say
-                </h3>
-                <div className="space-y-4">
-                  {testimonialSnippets.map((t) => (
-                    <div key={t.author} className="bg-gray-50 rounded-xl p-4">
-                      <p className="text-sm text-gray-700 italic mb-3">
-                        &ldquo;{t.quote}&rdquo;
-                      </p>
-                      <div className="flex items-center gap-2">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={t.image} alt={t.author} className="w-8 h-8 rounded-full" />
-                        <div>
-                          <p className="text-xs font-semibold text-navy-900">
-                            {t.author}
-                          </p>
-                          <p className="text-xs text-gray-500">{t.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+
+
             </div>
           </div>
         </Container>

@@ -103,27 +103,6 @@ export default function CaseStudyPage({ params }: Props) {
               </div>
             </AnimateOnScroll>
 
-            {/* Testimonial */}
-            {study.testimonial && (
-              <AnimateOnScroll>
-                <div className="bg-navy-900 rounded-2xl p-8 md:p-12">
-                  <div className="text-5xl text-coral/30 font-serif mb-4">
-                    &ldquo;
-                  </div>
-                  <blockquote className="text-lg text-white leading-relaxed italic mb-6">
-                    {study.testimonial.quote}
-                  </blockquote>
-                  <footer>
-                    <div className="text-white font-bold">
-                      {study.testimonial.author}
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {study.testimonial.role}
-                    </div>
-                  </footer>
-                </div>
-              </AnimateOnScroll>
-            )}
           </div>
 
           <div className="text-center mt-16">
