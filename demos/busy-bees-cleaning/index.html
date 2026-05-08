@@ -6,34 +6,36 @@
     <title>Busy Bees Cochrane | Professional Cleaning Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #1e3a5f;
-            --accent: #f59e0b;
-            --accent-dark: #d97706;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
+            --honey: #f59e0b;
+            --honey-dark: #d97706;
+            --honey-light: #fef3c7;
+            --bumble: #1f2937;
+            --cream: #fffbeb;
+            --white: #ffffff;
+            --gray: #6b7280;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Nunito', sans-serif;
             line-height: 1.6;
-            color: var(--dark);
+            color: var(--bumble);
+            background: var(--cream);
         }
 
         /* Header */
         header {
-            background: white;
+            background: var(--white);
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
 
         .header-container {
@@ -46,18 +48,25 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--bumble);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo .bee {
+            font-size: 1.8rem;
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--honey);
         }
 
         .header-phone {
-            background: var(--accent);
-            color: white;
+            background: var(--honey);
+            color: var(--bumble);
             padding: 12px 24px;
             border-radius: 50px;
             text-decoration: none;
@@ -67,16 +76,16 @@
         }
 
         .header-phone:hover {
-            background: var(--accent-dark);
+            background: var(--honey-dark);
             transform: scale(1.05);
         }
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #2d4a6f 100%);
+            background: linear-gradient(135deg, var(--honey) 0%, var(--honey-dark) 100%);
             padding: 160px 20px 100px;
             text-align: center;
-            color: white;
+            color: var(--bumble);
             position: relative;
             overflow: hidden;
         }
@@ -88,8 +97,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="8"/></svg>');
-            background-size: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            background-size: 60px;
         }
 
         .hero-content {
@@ -97,6 +106,17 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+        }
+
+        .hero-bee {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .hero h1 {
@@ -112,20 +132,10 @@
             margin-bottom: 35px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
         .hero-cta {
             display: inline-block;
-            background: var(--accent);
-            color: white;
+            background: var(--bumble);
+            color: var(--honey);
             padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
@@ -135,15 +145,14 @@
         }
 
         .hero-cta:hover {
-            background: var(--accent-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245,158,11,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         /* Services */
         .services {
             padding: 100px 20px;
-            background: white;
+            background: var(--white);
         }
 
         .section-title {
@@ -153,8 +162,12 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--bumble);
             margin-bottom: 15px;
+        }
+
+        .section-title h2 .bee {
+            font-size: 2rem;
         }
 
         .section-title p {
@@ -171,36 +184,29 @@
         }
 
         .service-card {
-            background: var(--light);
+            background: var(--cream);
             padding: 40px 30px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
             transition: all 0.3s;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--honey);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
-            color: var(--primary);
+            color: var(--bumble);
         }
 
         .service-card p {
@@ -211,7 +217,7 @@
         /* Pricing */
         .pricing {
             padding: 100px 20px;
-            background: var(--light);
+            background: var(--cream);
         }
 
         .pricing-grid {
@@ -223,12 +229,13 @@
         }
 
         .pricing-card {
-            background: white;
+            background: var(--white);
             padding: 40px 30px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s;
+            border: 3px solid transparent;
         }
 
         .pricing-card:hover {
@@ -236,22 +243,24 @@
         }
 
         .pricing-card.featured {
-            border: 3px solid var(--accent);
+            border-color: var(--honey);
             position: relative;
+            transform: scale(1.05);
         }
 
         .pricing-card.featured::before {
-            content: 'Most Popular';
+            content: '🐝 Most Popular';
             position: absolute;
-            top: -12px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            padding: 5px 15px;
+            background: var(--honey);
+            color: var(--bumble);
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .pricing-label {
@@ -260,12 +269,13 @@
             letter-spacing: 1px;
             color: var(--gray);
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .pricing-price {
             font-size: 3rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--honey-dark);
             margin-bottom: 5px;
         }
 
@@ -283,11 +293,11 @@
         /* Why Us */
         .why-us {
             padding: 100px 20px;
-            background: white;
+            background: var(--white);
         }
 
         .why-grid {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -296,25 +306,25 @@
 
         .why-item {
             text-align: center;
+            padding: 30px 20px;
+            background: var(--cream);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
         }
 
         .why-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 15px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .why-item h4 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: var(--primary);
+            color: var(--bumble);
         }
 
         .why-item p {
@@ -324,10 +334,31 @@
 
         /* CTA */
         .cta {
-            background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+            background: linear-gradient(135deg, var(--bumble) 0%, #374151 100%);
             padding: 80px 20px;
             text-align: center;
-            color: white;
+            color: var(--white);
+            position: relative;
+        }
+
+        .cta::before {
+            content: '🐝';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.05;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+
+        .cta::after {
+            content: '🐝';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.05;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%) scaleX(-1);
         }
 
         .cta h2 {
@@ -344,7 +375,7 @@
         .cta-phone {
             font-size: 2.5rem;
             font-weight: 800;
-            color: white;
+            color: var(--honey);
             text-decoration: none;
             display: block;
             margin-bottom: 20px;
@@ -355,25 +386,27 @@
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-btn {
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
         }
 
         .cta-btn.primary {
-            background: white;
-            color: #92400e;
+            background: var(--honey);
+            color: var(--bumble);
         }
 
         .cta-btn.secondary {
             background: transparent;
-            border: 2px solid rgba(255,255,255,0.5);
-            color: white;
+            border: 2px solid var(--honey);
+            color: var(--honey);
         }
 
         .cta-btn:hover {
@@ -382,8 +415,8 @@
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--bumble);
+            color: var(--white);
             padding: 60px 20px 30px;
         }
 
@@ -399,14 +432,17 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .footer-logo span {
-            color: var(--accent);
+            color: var(--honey);
         }
 
         .footer-section h4 {
-            color: var(--accent);
+            color: var(--honey);
             margin-bottom: 20px;
             font-size: 1rem;
             text-transform: uppercase;
@@ -415,7 +451,7 @@
 
         .footer-section p,
         .footer-section a {
-            color: #94a3b8;
+            color: #9ca3af;
             text-decoration: none;
             display: block;
             margin-bottom: 10px;
@@ -423,16 +459,16 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent);
+            color: var(--honey);
         }
 
         .footer-bottom {
             max-width: 1200px;
             margin: 40px auto 0;
             padding-top: 30px;
-            border-top: 1px solid #334155;
+            border-top: 1px solid #374151;
             text-align: center;
-            color: #64748b;
+            color: #6b7280;
             font-size: 0.9rem;
         }
 
@@ -452,6 +488,10 @@
                 font-size: 1.1rem;
             }
 
+            .hero-bee {
+                font-size: 3rem;
+            }
+
             .section-title h2 {
                 font-size: 2rem;
             }
@@ -465,6 +505,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
             .why-grid {
                 grid-template-columns: 1fr;
             }
@@ -474,23 +518,23 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Busy Bees <span>Cochrane</span></div>
+            <div class="logo"><span class="bee">🐝</span> Busy Bees <span>Cochrane</span></div>
             <a href="tel:403-969-8770" class="header-phone">403-969-8770</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">Local Cochrane Cleaning Service</div>
+            <div class="hero-bee">🐝</div>
             <h1>A Clean Home Without the Hassle</h1>
-            <p>Professional residential and commercial cleaning in Cochrane. Reliable, thorough, and always on time.</p>
+            <p>Professional residential and commercial cleaning in Cochrane. Reliable, thorough, and always buzzing to help!</p>
             <a href="tel:403-969-8770" class="hero-cta">Book Your Clean</a>
         </div>
     </section>
 
     <section class="services">
         <div class="section-title">
-            <h2>Our Cleaning Services</h2>
+            <h2>What We Clean <span class="bee">🐝</span></h2>
             <p>Residential and commercial cleaning tailored to your needs</p>
         </div>
         <div class="services-grid">
@@ -519,8 +563,8 @@
 
     <section class="pricing">
         <div class="section-title">
-            <h2>Simple, Transparent Pricing</h2>
-            <p>No hidden fees — just honest rates</p>
+            <h2>Simple, Honest Pricing</h2>
+            <p>No hidden fees — just transparent rates</p>
         </div>
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -543,8 +587,8 @@
 
     <section class="why-us">
         <div class="section-title">
-            <h2>Why Choose Busy Bees</h2>
-            <p>Cochrane's trusted cleaning service</p>
+            <h2>Why Choose the Bees? 🐝</h2>
+            <p>Cochrane's hardest-working cleaning crew</p>
         </div>
         <div class="why-grid">
             <div class="why-item">
@@ -554,8 +598,8 @@
             </div>
             <div class="why-item">
                 <div class="why-icon">⏰</div>
-                <h4>Reliable</h4>
-                <p>We show up on time, every time. No excuses.</p>
+                <h4>Always On Time</h4>
+                <p>We show up when we say. No excuses, no delays.</p>
             </div>
             <div class="why-item">
                 <div class="why-icon">✅</div>
@@ -571,7 +615,7 @@
     </section>
 
     <section class="cta">
-        <h2>Ready for a Cleaner Space?</h2>
+        <h2>Ready for a Spotless Space?</h2>
         <p>Call or text for a free quote</p>
         <a href="tel:403-969-8770" class="cta-phone">403-969-8770</a>
         <div class="cta-buttons">
@@ -583,7 +627,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <div class="footer-logo">Busy Bees <span>Cochrane</span></div>
+                <div class="footer-logo">🐝 Busy Bees <span>Cochrane</span></div>
                 <p>Professional cleaning services for homes and businesses in Cochrane.</p>
             </div>
             <div class="footer-section">
