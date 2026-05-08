@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Father's Approval Roofing | Quality Roofing in Calgary</title>
+    <title>Busy Bees Cochrane | Professional Cleaning Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,9 +12,8 @@
 
         :root {
             --primary: #1e3a5f;
-            --accent: #b91c1c;
-            --accent-dark: #991b1b;
-            --gold: #d97706;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
             --light: #f8fafc;
             --dark: #0f172a;
             --gray: #64748b;
@@ -47,7 +46,7 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary);
         }
@@ -89,12 +88,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3"/></svg>');
-            background-size: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="8"/></svg>');
+            background-size: 200px;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -138,36 +137,7 @@
         .hero-cta:hover {
             background: var(--accent-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(185,28,28,0.4);
-        }
-
-        /* Mission */
-        .mission {
-            padding: 80px 20px;
-            background: var(--light);
-            text-align: center;
-        }
-
-        .mission-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .mission-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .mission h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .mission p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(245,158,11,0.4);
         }
 
         /* Services */
@@ -218,7 +188,7 @@
         .service-icon {
             width: 70px;
             height: 70px;
-            background: var(--accent);
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -238,57 +208,76 @@
             font-size: 0.95rem;
         }
 
-        /* Portfolio */
-        .portfolio {
+        /* Pricing */
+        .pricing {
             padding: 100px 20px;
             background: var(--light);
         }
 
-        .portfolio-grid {
-            max-width: 1200px;
+        .pricing-grid {
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .portfolio-item {
-            position: relative;
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
             border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: var(--primary);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
 
-        .portfolio-item:hover img {
-            transform: scale(1.1);
+        .pricing-card.featured {
+            border: 3px solid var(--accent);
+            position: relative;
         }
 
-        .portfolio-overlay {
+        .pricing-card.featured::before {
+            content: 'Most Popular';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            padding: 30px 20px 20px;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
             color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
-        .portfolio-overlay h4 {
-            font-size: 1.2rem;
+        .pricing-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
             margin-bottom: 5px;
         }
 
-        .portfolio-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .pricing-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         /* Why Us */
@@ -298,78 +287,44 @@
         }
 
         .why-grid {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
         }
 
         .why-item {
-            display: flex;
-            gap: 20px;
+            text-align: center;
         }
 
-        .why-number {
-            width: 50px;
-            height: 50px;
+        .why-icon {
+            width: 60px;
+            height: 60px;
             background: var(--accent);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
         }
 
-        .why-content h4 {
-            font-size: 1.2rem;
+        .why-item h4 {
+            font-size: 1.1rem;
             margin-bottom: 8px;
             color: var(--primary);
         }
 
-        .why-content p {
+        .why-item p {
             color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Testimonial */
-        .testimonial {
-            padding: 80px 20px;
-            background: var(--primary);
-            color: white;
-            text-align: center;
-        }
-
-        .testimonial-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .testimonial-quote {
-            font-size: 1.5rem;
-            font-style: italic;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-stars {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
 
         /* CTA */
         .cta {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
             padding: 80px 20px;
             text-align: center;
             color: white;
@@ -412,7 +367,7 @@
 
         .cta-btn.primary {
             background: white;
-            color: var(--accent-dark);
+            color: #92400e;
         }
 
         .cta-btn.secondary {
@@ -441,7 +396,7 @@
         }
 
         .footer-logo {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 15px;
         }
@@ -471,17 +426,6 @@
             color: var(--accent);
         }
 
-        .bbb-badge {
-            background: #005a8b;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
         .footer-bottom {
             max-width: 1200px;
             margin: 40px auto 0;
@@ -493,6 +437,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -510,12 +460,13 @@
                 font-size: 1.8rem;
             }
 
-            .portfolio-grid {
+            .services-grid,
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
-            .testimonial-quote {
-                font-size: 1.2rem;
+            .why-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -523,165 +474,134 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Father's Approval <span>Roofing</span></div>
-            <a href="tel:587-830-6517" class="header-phone">587-830-6517</a>
+            <div class="logo">Busy Bees <span>Cochrane</span></div>
+            <a href="tel:403-969-8770" class="header-phone">403-969-8770</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">BBB Accredited • Family Owned</div>
-            <h1>Roofing Done Right, With Integrity</h1>
-            <p>A family company serving Calgary with honest, quality roofing. No shortcuts, no surprises — just work we're proud to put our name on.</p>
-            <a href="tel:587-830-6517" class="hero-cta">Get Your Free Estimate</a>
-        </div>
-    </section>
-
-    <section class="mission">
-        <div class="mission-content">
-            <div class="mission-icon">🏠</div>
-            <h2>Our Mission</h2>
-            <p>We believe every job should be done right. That means treating your home like our own, being upfront about costs, and delivering work that lasts. Anthony and Dino built this company on family, hard work, and doing right by our neighbors.</p>
+            <div class="hero-badge">Local Cochrane Cleaning Service</div>
+            <h1>A Clean Home Without the Hassle</h1>
+            <p>Professional residential and commercial cleaning in Cochrane. Reliable, thorough, and always on time.</p>
+            <a href="tel:403-969-8770" class="hero-cta">Book Your Clean</a>
         </div>
     </section>
 
     <section class="services">
         <div class="section-title">
-            <h2>Our Roofing Services</h2>
-            <p>Complete roofing solutions for Calgary homes</p>
+            <h2>Our Cleaning Services</h2>
+            <p>Residential and commercial cleaning tailored to your needs</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🏠</div>
-                <h3>Roof Replacement</h3>
-                <p>Full tear-off and replacement with quality materials built to handle Calgary's weather.</p>
+                <h3>Residential Cleaning</h3>
+                <p>Regular home cleaning to keep your space fresh, healthy, and welcoming.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Roof Repairs</h3>
-                <p>Leaks, storm damage, missing shingles — we fix it right the first time.</p>
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Cleaning</h3>
+                <p>Office and business cleaning to maintain a professional environment.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Roof Inspections</h3>
-                <p>Honest assessments before you buy or sell. We'll tell you what's really needed.</p>
+                <div class="service-icon">📦</div>
+                <h3>Move In/Out Cleaning</h3>
+                <p>Deep cleaning for moves — get your deposit back or start fresh.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">❄️</div>
-                <h3>Emergency Services</h3>
-                <p>Storm damage or sudden leaks? We respond fast to protect your home.</p>
+                <div class="service-icon">✨</div>
+                <h3>Deep Cleaning</h3>
+                <p>Thorough top-to-bottom cleaning including appliances and hard-to-reach areas.</p>
             </div>
         </div>
     </section>
 
-    <section class="portfolio">
+    <section class="pricing">
         <div class="section-title">
-            <h2>Our Work</h2>
-            <p>Quality craftsmanship on every project</p>
+            <h2>Simple, Transparent Pricing</h2>
+            <p>No hidden fees — just honest rates</p>
         </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://www.fathersapprovalroofing.com/uploads/7/1/6/3/7163087/editor/t-1.jpeg" alt="Roof Replacement">
-                <div class="portfolio-overlay">
-                    <h4>Complete Roof Replacement</h4>
-                    <p>Calgary, AB</p>
-                </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-label">Senior Rate</div>
+                <div class="pricing-price">$38.50<span>/hr</span></div>
+                <p class="pricing-desc">Special rate for seniors</p>
             </div>
-            <div class="portfolio-item">
-                <img src="https://www.fathersapprovalroofing.com/uploads/7/1/6/3/7163087/published/hail.jpg" alt="Storm Damage Assessment">
-                <div class="portfolio-overlay">
-                    <h4>Storm Damage Assessment</h4>
-                    <p>Calgary, AB</p>
-                </div>
+            <div class="pricing-card featured">
+                <div class="pricing-label">Regular Maintenance</div>
+                <div class="pricing-price">$42.50<span>/hr</span></div>
+                <p class="pricing-desc">Weekly or bi-weekly cleans</p>
             </div>
-            <div class="portfolio-item">
-                <img src="https://www.fathersapprovalroofing.com/uploads/7/1/6/3/7163087/published/damage-roof.jpg" alt="Roof Damage Repair">
-                <div class="portfolio-overlay">
-                    <h4>Roof Damage Repair</h4>
-                    <p>Calgary, AB</p>
-                </div>
+            <div class="pricing-card">
+                <div class="pricing-label">Move Out + Appliances</div>
+                <div class="pricing-price">$45<span>/hr</span></div>
+                <p class="pricing-desc">Deep clean with appliances</p>
             </div>
         </div>
     </section>
 
     <section class="why-us">
         <div class="section-title">
-            <h2>Why Choose Us</h2>
-            <p>More than just roofers — we're your neighbors</p>
+            <h2>Why Choose Busy Bees</h2>
+            <p>Cochrane's trusted cleaning service</p>
         </div>
         <div class="why-grid">
             <div class="why-item">
-                <div class="why-number">1</div>
-                <div class="why-content">
-                    <h4>Family Values</h4>
-                    <p>Anthony and Dino run this business with integrity. No pushy sales, no hidden fees.</p>
-                </div>
+                <div class="why-icon">📍</div>
+                <h4>Locally Owned</h4>
+                <p>Based right here in Cochrane — we're your neighbors.</p>
             </div>
             <div class="why-item">
-                <div class="why-number">2</div>
-                <div class="why-content">
-                    <h4>BBB Accredited</h4>
-                    <p>We've earned our reputation through honest work and satisfied customers.</p>
-                </div>
+                <div class="why-icon">⏰</div>
+                <h4>Reliable</h4>
+                <p>We show up on time, every time. No excuses.</p>
             </div>
             <div class="why-item">
-                <div class="why-number">3</div>
-                <div class="why-content">
-                    <h4>Quality Materials</h4>
-                    <p>We use premium materials that stand up to Calgary's tough climate.</p>
-                </div>
+                <div class="why-icon">✅</div>
+                <h4>Thorough</h4>
+                <p>We clean the details others miss.</p>
             </div>
             <div class="why-item">
-                <div class="why-number">4</div>
-                <div class="why-content">
-                    <h4>Clear Communication</h4>
-                    <p>We explain everything upfront and keep you informed throughout the job.</p>
-                </div>
+                <div class="why-icon">💬</div>
+                <h4>Easy Booking</h4>
+                <p>Quick quotes and flexible scheduling.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonial">
-        <div class="testimonial-content">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">"Honest, professional, and did exactly what they said they would. Anthony and his team treated our home with respect and finished ahead of schedule. This is what a family business should be."</p>
-            <p class="testimonial-author">— Calgary Homeowner</p>
         </div>
     </section>
 
     <section class="cta">
-        <h2>Ready for a Roof You Can Trust?</h2>
-        <p>Free estimates, honest advice, quality work</p>
-        <a href="tel:587-830-6517" class="cta-phone">587-830-6517</a>
+        <h2>Ready for a Cleaner Space?</h2>
+        <p>Call or text for a free quote</p>
+        <a href="tel:403-969-8770" class="cta-phone">403-969-8770</a>
         <div class="cta-buttons">
-            <a href="tel:587-830-6517" class="cta-btn primary">Call Now</a>
-            <a href="mailto:info@fathersapprovalroofing.ca" class="cta-btn secondary">Email Us</a>
+            <a href="tel:403-969-8770" class="cta-btn primary">Call Now</a>
+            <a href="mailto:busybeescochrane@gmail.com" class="cta-btn secondary">Email Us</a>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <div class="footer-logo">Father's Approval <span>Roofing</span></div>
-                <p>A family company serving Calgary with integrity.</p>
-                <div class="bbb-badge">BBB Accredited Business</div>
+                <div class="footer-logo">Busy Bees <span>Cochrane</span></div>
+                <p>Professional cleaning services for homes and businesses in Cochrane.</p>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#">Roof Replacement</a>
-                <a href="#">Roof Repairs</a>
-                <a href="#">Inspections</a>
-                <a href="#">Emergency Services</a>
+                <a href="#">Residential Cleaning</a>
+                <a href="#">Commercial Cleaning</a>
+                <a href="#">Move In/Out</a>
+                <a href="#">Deep Cleaning</a>
             </div>
             <div class="footer-section">
                 <h4>Contact Us</h4>
-                <p>Calgary, Alberta</p>
-                <a href="tel:587-830-6517">587-830-6517</a>
-                <a href="mailto:info@fathersapprovalroofing.ca">info@fathersapprovalroofing.ca</a>
+                <p>Cochrane, Alberta</p>
+                <a href="tel:403-969-8770">403-969-8770</a>
+                <a href="mailto:busybeescochrane@gmail.com">busybeescochrane@gmail.com</a>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2024 Father's Approval Roofing. All rights reserved.
+            &copy; 2024 Busy Bees Cochrane Ltd. All rights reserved.
         </div>
     </footer>
 </body>
