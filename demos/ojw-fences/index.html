@@ -162,6 +162,18 @@
             .footer-inner { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+            }
+
             .nav { display: none; }
             .hero { padding: 9rem 0 4rem; }
             .hero h1 { font-size: 2rem; }
