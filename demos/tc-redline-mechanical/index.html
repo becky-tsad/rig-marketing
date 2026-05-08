@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC Redline Mechanical | Cochrane's Trusted HVAC Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1e3a5f;
+            --accent: #dc2626;
+            --accent-dark: #b91c1c;
+            --blue: #0284c7;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-phone {
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .header-phone:hover {
+            background: var(--accent-dark);
+            transform: scale(1.05);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d4a6f 100%);
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="4" rx="8"/></svg>');
+            background-size: 120px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(220,38,38,0.4);
+        }
+
+        /* Emergency Banner */
+        .emergency {
+            background: var(--accent);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .emergency-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .emergency strong {
+            font-size: 1.1rem;
+        }
+
+        .emergency a {
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Lennox Badge */
+        .lennox {
+            padding: 60px 20px;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .lennox-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lennox-badge {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 16px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .lennox-badge h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .lennox-badge p {
+            color: var(--gray);
+        }
+
+        /* Why Us */
+        .why-us {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .why-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .why-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .why-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .why-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 80px 20px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .reviews-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reviews-rating {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .reviews-stars {
+            color: #fbbf24;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .reviews p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+        }
+
+        .cta-phone {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .cta-subtext {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn.primary {
+            background: white;
+            color: var(--accent-dark);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-badge {
+            background: #0284c7;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-phone {
+                font-size: 1.8rem;
+            }
+
+            .emergency-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">TC <span>Redline</span> Mechanical</div>
+            <a href="tel:403-992-4328" class="header-phone">403-992-HEAT</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Serving Cochrane Since 2008 • Lennox Dealer</div>
+            <h1>Your Comfort is Our Business</h1>
+            <p>Heating, cooling, and plumbing solutions from Cochrane's trusted HVAC experts. Quality work, fair prices, and service you can count on.</p>
+            <a href="tel:403-992-4328" class="hero-cta">Call 403-992-HEAT</a>
+        </div>
+    </section>
+
+    <section class="emergency">
+        <div class="emergency-content">
+            <span>🔥</span>
+            <strong>Furnace Emergency?</strong>
+            <span>We're here when you need us.</span>
+            <a href="tel:403-992-4328">403-992-4328</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Complete mechanical solutions for your home</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Heating</h3>
+                <p>Furnace installation, repair, and maintenance. Stay warm through Alberta winters.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>Air Conditioning</h3>
+                <p>AC installation and repair. Beat the summer heat with reliable cooling.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Plumbing</h3>
+                <p>Water heaters, fixtures, repairs. Complete plumbing services for your home.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Maintenance</h3>
+                <p>Annual tune-ups and inspections. Keep your systems running efficiently.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>New Construction</h3>
+                <p>Complete HVAC systems for new builds. Designed right from the start.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Fire Protection</h3>
+                <p>Fire suppression systems and safety equipment for residential and commercial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="lennox">
+        <div class="lennox-content">
+            <div class="lennox-badge">
+                <h3>Authorized Lennox Dealer</h3>
+                <p>Premium heating and cooling equipment backed by industry-leading warranties</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="section-title">
+            <h2>Why Choose TC Redline</h2>
+            <p>15+ years of keeping Cochrane comfortable</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">1</div>
+                <div class="why-content">
+                    <h4>Local & Trusted</h4>
+                    <p>Owner Lee Ambrose has served Cochrane since 2008. We know this community.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">2</div>
+                <div class="why-content">
+                    <h4>Lennox Quality</h4>
+                    <p>As an authorized dealer, we install and service premium Lennox equipment.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">3</div>
+                <div class="why-content">
+                    <h4>Fair Pricing</h4>
+                    <p>Honest quotes, no hidden fees. We explain everything before we start.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">4</div>
+                <div class="why-content">
+                    <h4>Emergency Service</h4>
+                    <p>When your heat goes out at -30°C, we're there when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="reviews-content">
+            <div class="reviews-rating">4.3</div>
+            <div class="reviews-stars">★★★★☆</div>
+            <p>Rated by our customers on Google • 15+ Reviews</p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Need HVAC Service?</h2>
+        <p>Free estimates on new installations</p>
+        <a href="tel:403-992-4328" class="cta-phone">403-992-HEAT</a>
+        <p class="cta-subtext">(403-992-4328)</p>
+        <div class="cta-buttons">
+            <a href="tel:403-992-4328" class="cta-btn primary">Call Now</a>
+            <a href="mailto:info@tcredline.ca" class="cta-btn secondary">Email Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">TC <span>Redline</span> Mechanical</div>
+                <p>Cochrane's trusted HVAC experts since 2008.</p>
+                <div class="footer-badge">Lennox Authorized Dealer</div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">Heating</a>
+                <a href="#">Air Conditioning</a>
+                <a href="#">Plumbing</a>
+                <a href="#">Fire Protection</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Cochrane, Alberta</p>
+                <a href="tel:403-992-4328">403-992-HEAT (4328)</a>
+                <a href="mailto:info@tcredline.ca">info@tcredline.ca</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 TC Redline Mechanical. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

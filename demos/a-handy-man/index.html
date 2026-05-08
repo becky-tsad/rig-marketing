@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Handy Man Ltd | Cochrane's Full-Service Renovation Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1e3a5f;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-phone {
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .header-phone:hover {
+            background: var(--accent-dark);
+            transform: scale(1.05);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d4a6f 100%);
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="8"/></svg>');
+            background-size: 200px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245,158,11,0.4);
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--primary);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 30px 20px 20px;
+            color: white;
+        }
+
+        .portfolio-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Why Us */
+        .why-us {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .why-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .why-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .why-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .why-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+        }
+
+        .cta-phone {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn.primary {
+            background: white;
+            color: var(--accent-dark);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-phone {
+                font-size: 1.8rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">A Handy Man <span>Ltd</span></div>
+            <a href="tel:403-837-5551" class="header-phone">403-837-5551</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Serving Cochrane & Area for 7+ Years</div>
+            <h1>Your Home Renovation Experts in Cochrane</h1>
+            <p>From bathroom remodels to basement developments, decks to fences — we handle it all with quality craftsmanship and honest service.</p>
+            <a href="tel:403-837-5551" class="hero-cta">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-title">
+            <h2>Full-Service Renovations</h2>
+            <p>One call handles it all — no need to juggle multiple contractors</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🛁</div>
+                <h3>Bathroom Renovations</h3>
+                <p>Complete bathroom remodels from design to finish. Tile, fixtures, vanities, and more.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Basement Development</h3>
+                <p>Turn unused space into living areas, home offices, or entertainment rooms.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪵</div>
+                <h3>Decks & Patios</h3>
+                <p>Custom outdoor living spaces built to last through Alberta winters.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Fences & Gates</h3>
+                <p>Wood, vinyl, and composite fencing. Privacy, security, and curb appeal.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>General Repairs</h3>
+                <p>Drywall, flooring, doors, trim work — all the details that make a house a home.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Interior Finishing</h3>
+                <p>Painting, trim, crown molding, and finishing touches for any room.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="section-title">
+            <h2>Recent Projects</h2>
+            <p>Quality craftsmanship you can see and trust</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="images/bathroom1.jpg" alt="Bathroom Renovation" onerror="this.style.display='none'">
+                <div class="portfolio-overlay">
+                    <h4>Modern Bathroom Remodel</h4>
+                    <p>Cochrane, AB</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/basement1.jpg" alt="Basement Development" onerror="this.style.display='none'">
+                <div class="portfolio-overlay">
+                    <h4>Full Basement Development</h4>
+                    <p>Cochrane, AB</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/deck1.jpg" alt="Custom Deck" onerror="this.style.display='none'">
+                <div class="portfolio-overlay">
+                    <h4>Custom Cedar Deck</h4>
+                    <p>Cochrane, AB</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/fence1.jpg" alt="Privacy Fence" onerror="this.style.display='none'">
+                <div class="portfolio-overlay">
+                    <h4>Privacy Fence Installation</h4>
+                    <p>Cochrane, AB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="section-title">
+            <h2>Why Cochrane Trusts Us</h2>
+            <p>Built on honesty, quality, and getting the job done right</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">1</div>
+                <div class="why-content">
+                    <h4>7+ Years Local Experience</h4>
+                    <p>We know Cochrane homes, local codes, and what works in our climate.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">2</div>
+                <div class="why-content">
+                    <h4>One Point of Contact</h4>
+                    <p>No juggling multiple contractors. One call handles your entire project.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">3</div>
+                <div class="why-content">
+                    <h4>Clear Communication</h4>
+                    <p>We show up when we say, keep you informed, and respect your home.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-number">4</div>
+                <div class="why-content">
+                    <h4>Quality Workmanship</h4>
+                    <p>We take pride in every detail — your satisfaction is our reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Free estimates, honest advice, no pressure</p>
+        <a href="tel:403-837-5551" class="cta-phone">403-837-5551</a>
+        <div class="cta-buttons">
+            <a href="tel:403-837-5551" class="cta-btn primary">Call Now</a>
+            <a href="mailto:info@ahandymanltd.ca" class="cta-btn secondary">Email Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">A Handy Man <span>Ltd</span></div>
+                <p>Cochrane's trusted name in home renovations for over 7 years.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">Bathroom Renovations</a>
+                <a href="#">Basement Development</a>
+                <a href="#">Decks & Patios</a>
+                <a href="#">Fences & Gates</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Cochrane, Alberta</p>
+                <a href="tel:403-837-5551">403-837-5551</a>
+                <a href="mailto:info@ahandymanltd.ca">info@ahandymanltd.ca</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 A Handy Man Ltd. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
