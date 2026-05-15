@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Wipe Clean Window Cleaning | Fourth-Generation Window Cleaners Serving Cochrane & Calgary</title>
+    <meta name="description" content="Wipe Clean Window Cleaning — Fourth-Generation Window Cleaners Serving Cochrane & Calgary. Serving Serving Cochrane, Calgary, Airdrie, Chestermere, Banff, Okotoks, Olds, and surrounding communities. Get a free quote at (403) 278-3393.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0369a1;
+            --accent: #facc15;
+            --accent-dark: #ca8a04;
+            --soft: #f0f9ff;
+            --dark: #1f2937;
+            --gray-900: #1f2937;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--accent); }
+        .header-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 11px 22px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .header-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .header-cta svg { width: 16px; height: 16px; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 45%;
+            background-image: url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            mix-blend-mode: soft-light;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 680px; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+        .hero-badge svg { width: 14px; height: 14px; }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+        .btn-primary, .btn-secondary {
+            padding: 16px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.2); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+        }
+        .hero-trust div { display: inline-flex; align-items: center; gap: 8px; }
+        .hero-trust svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* INSURED BADGE BAND */
+        .badge-band {
+            background: var(--soft);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .badge-band-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            text-align: center;
+        }
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        .trust-pill svg { width: 20px; height: 20px; color: var(--success); flex-shrink: 0; }
+
+        /* SECTIONS */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+        .section-eyebrow {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+        }
+
+        /* SERVICE TYPES — 4 cards w/ checkmark lists */
+        .service-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .type-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            padding: 32px 28px;
+            border-radius: 16px;
+            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .type-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.06);
+        }
+        .type-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--soft);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .type-icon svg { width: 28px; height: 28px; }
+        .type-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .type-card .type-sub {
+            color: var(--gray-500);
+            font-size: 0.92rem;
+            margin-bottom: 18px;
+        }
+        .type-list {
+            list-style: none;
+            margin-top: auto;
+        }
+        .type-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 0.93rem;
+            color: var(--gray-700);
+        }
+        .type-list li::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='3'><polyline points='20 6 9 17 4 12'/></svg>");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* WHY US */
+        .why-us { background: var(--soft); }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+        .why-item {
+            background: var(--white);
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .why-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border-radius: 18px;
+            margin-bottom: 18px;
+        }
+        .why-icon svg { width: 30px; height: 30px; }
+        .why-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .why-item p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* PRICING (optional) */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* REVIEWS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            padding: 28px;
+            border-radius: 16px;
+        }
+        .review-stars {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .review-text {
+            color: var(--gray-700);
+            font-size: 0.98rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .review-author {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        /* SERVICE AREA */
+        .service-area { background: var(--soft); text-align: center; }
+        .area-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .area-chip {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            color: var(--gray-700);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .contact-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .contact-info p {
+            color: var(--gray-500);
+            margin-bottom: 28px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        .contact-icon {
+            width: 44px; height: 44px;
+            background: var(--soft);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 20px; height: 20px; }
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
+        }
+        .contact-value {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .contact-value:hover { color: var(--primary); }
+        .hours-table { font-size: 0.95rem; color: var(--gray-700); }
+        .hours-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--gray-100); }
+        .hours-row:last-child { border: 0; }
+        .hours-day { font-weight: 600; color: var(--dark); }
+
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .contact-cta h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .contact-cta p {
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 24px;
+        }
+        .contact-cta .btn-primary {
+            background: var(--accent);
+            font-size: 1.1rem;
+            padding: 18px 32px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0 24px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .footer-logo span { color: var(--accent); }
+        .footer p { font-size: 0.9rem; margin-bottom: 20px; }
+        .footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 24px; }
+        .footer-social a {
+            width: 38px; height: 38px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .footer-social a:hover { background: var(--accent); }
+        .footer-social svg { width: 16px; height: 16px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .footer-attribution {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-attribution a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-attribution a:hover { color: var(--accent); }
+
+        /* MOBILE STICKY BOOK */
+        .sticky-call {
+            display: none;
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            z-index: 50;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 80px; }
+            .hero::after { width: 100%; opacity: 0.18; }
+            .hero-trust { gap: 14px; font-size: 0.85rem; }
+            .section { padding: 60px 0; }
+            .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+            .header-cta span { display: none; }
+            .sticky-call { display: block; }
+            body { padding-bottom: 80px; }
+            .badge-band-inner { gap: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Wipe Clean Window Cleaning</a>
+            <a href="#contact" class="header-cta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                <span>Get Free Quote</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    5-Star Rated · 1,200+ Reviews · 90+ Years in the Family
+                </div>
+                <h1>Crystal-clear windows. From a family that's been at it for 90 years.</h1>
+                <p>Nick is the fourth generation behind Wipe Clean — windows, gutters, pressure washing, snow removal, and holiday lighting across Cochrane and the Bow Valley. Same family-trained crew on every visit.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary">
+                        Get Your Free Quote
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="tel:+14032783393" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Call (403) 278-3393
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Family Owned · 4th Generation</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 5 ★ from 1,200+ Reviews</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Fully Insured Crews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="badge-band">
+        <div class="container">
+            <div class="badge-band-inner">
+                <div class="trust-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Fully Insured & Bonded
+                </div>
+                <div class="trust-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Background-Checked Staff
+                </div>
+                <div class="trust-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Eco-Friendly Supplies
+                </div>
+                <div class="trust-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    100% Satisfaction Guarantee
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Services</div>
+                <h2 class="section-title">Windows, water, weather — we handle the outside of your home</h2>
+                <p class="section-sub">From a sparkling window clean in the spring to clearing the driveway after a January dump — Wipe Clean is the year-round crew your home (or business) calls first.</p>
+            </div>
+            <div class="service-types-grid">
+                <div class="type-card"><div class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div><h3>Window Cleaning</h3><p class="type-sub">Streak-free, inside and out — homes, high-rises, skylights.</p><ul class="type-list"><li>Interior & exterior glass</li><li>Window screens & tracks</li><li>Skylights & solar panels</li><li>High-rise & rope-access work</li><li>Hard-water stain removal</li></ul></div><div class="type-card"><div class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M5 8l2 2M19 8l-2 2M3 14h18M5 20h14"/></svg></div><h3>Pressure Washing</h3><p class="type-sub">Siding, decks, driveways, fences — restored, not damaged.</p><ul class="type-list"><li>House siding & soffits</li><li>Driveways, walkways & patios</li><li>Decks, fences & retaining walls</li><li>Soft-wash for delicate surfaces</li><li>Commercial storefronts</li></ul></div><div class="type-card"><div class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/></svg></div><h3>Gutter & Dryer Vent</h3><p class="type-sub">Pull the debris, prevent the leak, protect the foundation.</p><ul class="type-list"><li>Full gutter clean-out & flush</li><li>Downspout inspection</li><li>Dryer vent cleaning</li><li>Gutter guard install on request</li><li>Before/after photos provided</li></ul></div><div class="type-card"><div class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg></div><h3>Snow Removal & Lights</h3><p class="type-sub">Winter-ready year-round — and we'll string the lights, too.</p><ul class="type-list"><li>Residential driveways & walks</li><li>Commercial lots & sidewalks</li><li>Seasonal contracts available</li><li>Holiday light install & takedown</li><li>Storage of lights between seasons</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Why Choose Us</div>
+                <h2 class="section-title">Why Cochrane homes trust Wipe Clean</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Four Generations of Window Cleaners</h3><p>Nick is the fourth generation in the family trade. 90+ years of know-how on every ladder.</p></div><div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><h3>One Crew, All Year</h3><p>Windows in spring, pressure wash in summer, gutters in fall, snow in winter — one call covers your whole calendar.</p></div><div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L3 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7l-9-5z"/></svg></div><h3>Fully Insured, Trained Teams</h3><p>Every crew member is trained in-house, fully insured, and equipped for high-rise and rope-access work when needed.</p></div><div class="why-item"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Open 7 Days a Week</h3><p>Quotes returned same day. Crews dispatched whenever the weather (and your calendar) cooperates.</p></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">What Customers Say</div>
+                <h2 class="section-title">Real reviews from happy homes</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"It is a pleasure working with the entire Wipe Clean team. They are all very professional, extremely friendly, and majorly dedicated to their trade."</p><div class="review-author">— Long-term Calgary customer</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"After washing the siding and windows of my house with Wipe Clean, it looks new. Super satisfied and totally recommended."</p><div class="review-author">— Cochrane homeowner</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Andrew and Claudiu came out and were efficient, respectful, and professional. The quality of the work belied the reasonable price — we'll be calling them back."</p><div class="review-author">— Airdrie homeowner</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section service-area">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Service Area</div>
+                <h2 class="section-title">Where we clean</h2>
+                <p class="section-sub">Serving Cochrane, Calgary, Airdrie, Chestermere, Banff, Okotoks, Olds, and surrounding communities</p>
+            </div>
+            <div class="area-list">
+                <span class="area-chip">Cochrane</span><span class="area-chip">Calgary</span><span class="area-chip">Airdrie</span><span class="area-chip">Chestermere</span><span class="area-chip">Banff</span><span class="area-chip">Okotoks</span><span class="area-chip">Olds</span><span class="area-chip">Bragg Creek</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Get a Free Quote</div>
+                <h2 class="section-title">Ready for a cleaner home?</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Wipe Clean Window Cleaning</h3>
+                    <p>Tell us what needs cleaning (or clearing) and we'll send a free, no-pressure quote — usually within the same day.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <a href="tel:+14032783393" class="contact-value">(403) 278-3393</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <a href="mailto:info@wipeclean.ca" class="contact-value">info@wipeclean.ca</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Service Area</div>
+                            <div class="contact-value">Cochrane, AB</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div style="flex:1;">
+                            <div class="contact-label">Hours</div>
+                            <div class="hours-table">
+                                <div class="hours-row"><span class="hours-day">Monday – Friday</span><span>7:00 AM – 7:00 PM</span></div><div class="hours-row"><span class="hours-day">Saturday – Sunday</span><span>By Appointment</span></div><div class="hours-row"><span class="hours-day">Snow Calls</span><span>Dispatched 24/7</span></div><div class="hours-row"><span class="hours-day">Quote Requests</span><span>Replied within 24h</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Ready for a sparkling view?</h3>
+                    <p>One quick form, one free quote, no pressure. Cochrane's fourth-generation cleaners are ready when you are.</p>
+                    <a href="tel:+14032783393" class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                        Get Your Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Wipe Clean Window Cleaning</div>
+            <p>Fourth-Generation Window Cleaners Serving Cochrane & Calgary · Serving Cochrane, Calgary, Airdrie, Chestermere, Banff, Okotoks, Olds, and surrounding communities</p>
+            <div class="footer-social">
+                <a href="https://facebook.com/calgarywindowcleaning" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://instagram.com/wipecleanwindowcleaning" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 6.5a3.3 3.3 0 100 6.6 3.3 3.3 0 000-6.6zm5-.6a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6z"/></svg></a><a href="https://wipeclean.ca" aria-label="Website"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c1.5 0 2.8 1.4 3.5 3.8H8.5C9.2 5.4 10.5 4 12 4zM6 8h2.3a17 17 0 000 4H6a8 8 0 010-4zm2.3 6H6a8 8 0 003.2 4 17 17 0 01-.9-4zm1.8 0h3.8c-.5 2.3-1.4 4-1.9 4s-1.4-1.7-1.9-4zm.5-6h3a17 17 0 010 4h-3a17 17 0 010-4zm5 0h2.4a8 8 0 010 4h-2.4a17 17 0 000-4zm-.5 6h2.3a8 8 0 01-3.2 4 17 17 0 00.9-4z"/></svg></a>
+            </div>
+            <div class="footer-bottom">
+                © <span id="year"></span> Wipe Clean Window Cleaning. All rights reserved.
+                <div class="footer-attribution">
+                    Demo site by <a href="https://rigmarketing.ca" target="_blank">RIG Marketing</a> — built in 7 days.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#contact" class="sticky-call">
+        Get Your Free Quote
+    </a>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
