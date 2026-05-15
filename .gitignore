@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# RIG pipeline test renders — should never deploy
+demos/_preview-*/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

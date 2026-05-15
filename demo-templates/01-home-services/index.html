@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>{{BUSINESS_NAME}} | {{TAGLINE}}</title>
+    <meta name="description" content="{{BUSINESS_NAME}} — {{TAGLINE}}. Serving {{SERVICE_AREA_TEXT}}. Call {{PHONE}}.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: {{PRIMARY_COLOR}};
+            --primary-dark: {{PRIMARY_DARK_COLOR}};
+            --accent: {{ACCENT_COLOR}};
+            --accent-dark: {{ACCENT_DARK_COLOR}};
+            --dark: #0f172a;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--accent); }
+        .header-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 11px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .header-cta:hover { background: var(--accent-dark); }
+        .header-cta svg { width: 16px; height: 16px; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 50%;
+            background-image: url('{{HERO_IMAGE_URL}}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            mix-blend-mode: luminosity;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 680px; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+        .hero-badge::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(34,197,94,0.3);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+        .btn-primary, .btn-secondary {
+            padding: 16px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .hero-trust div { display: inline-flex; align-items: center; gap: 8px; }
+        .hero-trust svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* SERVICES */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+        .section-eyebrow {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            padding: 28px;
+            border-radius: 14px;
+            transition: all 0.25s;
+        }
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--white);
+        }
+        .service-icon svg { width: 24px; height: 24px; }
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* WHY US */
+        .why-us { background: var(--gray-100); }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+        .why-item { text-align: center; }
+        .why-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px; height: 64px;
+            background: var(--white);
+            color: var(--accent);
+            border-radius: 50%;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        }
+        .why-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .why-item p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* REVIEWS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            padding: 28px;
+            border-radius: 14px;
+        }
+        .review-stars {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .review-text {
+            color: var(--gray-700);
+            font-size: 0.98rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .review-author {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        /* SERVICE AREA */
+        .service-area { background: var(--dark); color: var(--white); text-align: center; }
+        .service-area .section-title { color: var(--white); }
+        .service-area .section-sub { color: rgba(255,255,255,0.7); }
+        .area-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .area-chip {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .contact-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .contact-info p {
+            color: var(--gray-500);
+            margin-bottom: 28px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        .contact-icon {
+            width: 44px; height: 44px;
+            background: var(--gray-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .contact-icon svg { width: 20px; height: 20px; }
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
+        }
+        .contact-value {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .contact-value:hover { color: var(--primary); }
+        .hours-table { font-size: 0.95rem; color: var(--gray-700); }
+        .hours-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--gray-100); }
+        .hours-row:last-child { border: 0; }
+        .hours-day { font-weight: 600; color: var(--dark); }
+
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .contact-cta h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .contact-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+        .contact-cta .btn-primary {
+            background: var(--accent);
+            font-size: 1.1rem;
+            padding: 18px 32px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0 24px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .footer-logo span { color: var(--accent); }
+        .footer p { font-size: 0.9rem; margin-bottom: 20px; }
+        .footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 24px; }
+        .footer-social a {
+            width: 38px; height: 38px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .footer-social a:hover { background: var(--accent); }
+        .footer-social svg { width: 16px; height: 16px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .footer-attribution {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-attribution a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-attribution a:hover { color: var(--accent); }
+
+        /* MOBILE STICKY CALL */
+        .sticky-call {
+            display: none;
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            z-index: 50;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 80px; }
+            .hero::after { width: 100%; opacity: 0.15; }
+            .hero-trust { gap: 14px; font-size: 0.85rem; }
+            .section { padding: 60px 0; }
+            .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+            .header-cta span { display: none; }
+            .sticky-call { display: block; }
+            body { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">{{BUSINESS_NAME}}</a>
+            <a href="tel:{{PHONE_HREF}}" class="header-cta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <span>{{PHONE}}</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">{{HERO_BADGE_TEXT}}</div>
+                <h1>{{HERO_HEADLINE}}</h1>
+                <p>{{HERO_SUBHEADLINE}}</p>
+                <div class="hero-ctas">
+                    <a href="tel:{{PHONE_HREF}}" class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Call {{PHONE}}
+                    </a>
+                    <a href="#services" class="btn-secondary">See Our Services</a>
+                </div>
+                <div class="hero-trust">
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> {{TRUST_BADGE_1}}</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> {{TRUST_BADGE_2}}</div>
+                    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> {{TRUST_BADGE_3}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Our Services</div>
+                <h2 class="section-title">{{SERVICES_TITLE}}</h2>
+                <p class="section-sub">{{SERVICES_SUB}}</p>
+            </div>
+            <div class="services-grid">
+                {{SERVICES_HTML}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Why Choose Us</div>
+                <h2 class="section-title">{{WHY_TITLE}}</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-number">1</div>
+                    <h3>{{WHY_1_TITLE}}</h3>
+                    <p>{{WHY_1_TEXT}}</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">2</div>
+                    <h3>{{WHY_2_TITLE}}</h3>
+                    <p>{{WHY_2_TEXT}}</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">3</div>
+                    <h3>{{WHY_3_TITLE}}</h3>
+                    <p>{{WHY_3_TEXT}}</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">4</div>
+                    <h3>{{WHY_4_TITLE}}</h3>
+                    <p>{{WHY_4_TEXT}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">What Customers Say</div>
+                <h2 class="section-title">Real reviews from real customers</h2>
+            </div>
+            <div class="reviews-grid">
+                {{REVIEWS_HTML}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section service-area">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow" style="color: var(--accent);">Service Area</div>
+                <h2 class="section-title">Proudly serving the area</h2>
+                <p class="section-sub">{{SERVICE_AREA_TEXT}}</p>
+            </div>
+            <div class="area-list">
+                {{SERVICE_AREA_CHIPS}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Get in Touch</div>
+                <h2 class="section-title">Ready to get started?</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact {{BUSINESS_NAME}}</h3>
+                    <p>{{CONTACT_INTRO}}</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <a href="tel:{{PHONE_HREF}}" class="contact-value">{{PHONE}}</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <a href="mailto:{{EMAIL}}" class="contact-value">{{EMAIL}}</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Service Area</div>
+                            <div class="contact-value">{{CITY}}, {{PROVINCE}}</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div style="flex:1;">
+                            <div class="contact-label">Hours</div>
+                            <div class="hours-table">
+                                {{HOURS_HTML}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>{{CTA_HEADLINE}}</h3>
+                    <p>{{CTA_SUBHEADLINE}}</p>
+                    <a href="tel:{{PHONE_HREF}}" class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:20px;height:20px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Call {{PHONE}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">{{BUSINESS_NAME}}</div>
+            <p>{{TAGLINE}} · {{SERVICE_AREA_TEXT}}</p>
+            <div class="footer-social">
+                {{SOCIAL_LINKS_HTML}}
+            </div>
+            <div class="footer-bottom">
+                © <span id="year"></span> {{BUSINESS_NAME}}. All rights reserved.
+                <div class="footer-attribution">
+                    Demo site by <a href="https://rigmarketing.ca" target="_blank">RIG Marketing</a> — built in 7 days.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:{{PHONE_HREF}}" class="sticky-call">
+        📞 Call {{PHONE}}
+    </a>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
